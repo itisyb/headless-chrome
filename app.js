@@ -60,7 +60,8 @@ app.get('/', function(req, res) {
             await page.setViewport({ width: 1920, height: 1009 });
             await page.waitForSelector('.go')
             await page.click('.go')
-            await page.waitForTimeout(3000);
+            await page.waitFor(3000);
+            res.send('No-yo')
             await page.waitForSelector('.response');
             res.send('yo')
             await browser.close();
